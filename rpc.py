@@ -2,6 +2,9 @@ from tkinter import*
 from random import*
 from PIL import ImageTk
 
+def game(com, user):
+    if com == user:
+        lbl_res['text'] = "Draw"
 def change_img(user):
     List = ["scissors.png", "rock.png", "paper.png"]
     com = randint(0, 2)
@@ -11,6 +14,7 @@ def change_img(user):
     lbl_com.image = com_img
     lbl_user['image'] = user_img
     lbl_user.image = user_img
+    game(com, user)
     
 win = Tk()
 win.title("Rock Paper Scissors Game")
@@ -35,3 +39,5 @@ lbl_name2.grid(row = 1, column = 2)
 btn_scissor.grid(row = 2, column = 0)
 btn_rock.grid(row = 2, column = 1)
 btn_paper.grid(row = 2, column = 2)
+
+win.mainloop()
